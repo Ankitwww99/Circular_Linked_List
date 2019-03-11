@@ -114,7 +114,36 @@ class MyCircularListNonPrimitive{
         }//end of else
     }//end of method insertfirst
 
+    public void deletefirst(){
+        if(isempty()){
+            System.out.println("list empty");
+            return;
+        }//end of if
+        else{
+            Nodee temp=Start;
+            while(temp.getNext()!=Start){
+                temp=temp.getNext();
+            }
+            Start=Start.getNext();
+            temp.setNext(Start);
+        }//end of else
+    }//end of method deletefirst
 
+    public void deletelast(){
+        if(isempty()){
+            System.out.println("list empty");
+            return;
+        }//end of if
+        else{
+            Nodee temp=Start;
+            // Node pre;
+            while(temp.getNext().getNext()!=Start){
+                // pre=temp;
+                temp=temp.getNext();
+            }//end of while
+            temp.setNext(Start);
+        }//end of else
+    }//end of method deletelast
 
 }//end of class MyCircularListNonPrimitive
 
