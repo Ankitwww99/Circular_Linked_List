@@ -125,5 +125,14 @@ class MyCircularList1{
 
 
 public class one {
-
+    public static void main(String[] args) {
+        MyCircularList1 obj =new MyCircularList1();
+        obj.insertfirst(12);
+        obj.insertfirst(13);
+        obj.insertend(11);
+        obj.deletelast();
+        obj.insertfirst(123);
+        obj.deletefirst();
+        obj.display();
+    }
 }
