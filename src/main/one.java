@@ -114,7 +114,9 @@ class MyCircularList1{
         }//end of if
         else{
             Node temp=Start;
+           // Node pre;
             while(temp.getNext().getNext()!=Start){
+               // pre=temp;
                 temp=temp.getNext();
             }//end of while
             temp.setNext(Start);
@@ -134,5 +136,5 @@ public class one {
         obj.insertfirst(123);
         obj.deletefirst();
         obj.display();
-    }
-}
+    }//end of main
+}//end of class one
