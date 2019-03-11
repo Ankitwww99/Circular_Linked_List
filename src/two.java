@@ -19,7 +19,24 @@ class Student{
     }
 }//end of non-primitive datatype Student
 
+class Nodee{
+    private Student data;
+    private Nodee next;
 
+    public Nodee(int Rollno,String Name) {
+        data.setRollno(Rollno);
+        data.setName(Name);
+        next=null;
+    }
+
+    public Nodee getNext() {
+        return next;
+    }
+
+    public void setNext(Nodee next) {
+        this.next = next;
+    }
+}//end of nodee
 
 
 public class two {
