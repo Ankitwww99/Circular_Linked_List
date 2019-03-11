@@ -2,6 +2,17 @@ class Student{
     int Rollno;
     String Name;
     //getter & Setter Methods
+
+    public Student() {
+        Rollno = 0;
+        Name = null;
+    }
+
+    public Student(int rollno, String name) {
+        Rollno = rollno;
+        Name = name;
+    }
+
     public int getRollno() {
         return Rollno;
     }
@@ -72,11 +83,13 @@ class MyCircularListNonPrimitive{
         }//end of if
         else{
             Nodee temp=Start;
+            Student tobj=temp.getData();
             while(temp.getNext()!=Start){
-                System.out.println(temp.getData());
+                tobj=temp.getData();
+                System.out.println(tobj.getName()+ " "+tobj.getRollno());
                 temp=temp.getNext();
             }//end of while
-            System.out.println(temp.getData());
+            System.out.println(tobj.getName()+ " "+tobj.getRollno());
         }//end of else
     }//end of method display
 
@@ -149,4 +162,12 @@ class MyCircularListNonPrimitive{
 
 
 public class two {
-}
+    public static void main(String[] args) {
+        MyCircularListNonPrimitive obj=new MyCircularListNonPrimitive();
+        Student obj1= new Student(1,"ankit");
+        Student obj2= new Student(2,"aman");
+        Student obj3= new Student(3,"rajat");
+        Student obj4= new Student(3,"ram");
+
+    }
+}//end of class two
