@@ -178,4 +178,16 @@ class Mycirculardoublylist{
 }//end of Mycirculardoublylist
 
 public class three {
+    public static void main(String[] args) {
+        Mycirculardoublylist obj=new Mycirculardoublylist();
+        Employee obj1=new Employee("ankit",10000,"manager1");
+        Employee obj2=new Employee("ashwani",5000,"manager2");
+        Employee obj3=new Employee("anurag",4000,"manager3");
+        Employee obj4=new Employee("akash",3000,"manager4");
+        obj.insertfirst(obj1);
+        obj.insertend(obj2);
+        obj.insertend(obj3);
+        obj.insertfirst(obj4);
+        obj.display();
+    }
 }
