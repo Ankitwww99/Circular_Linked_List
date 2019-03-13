@@ -1,3 +1,5 @@
+//circular linked list
+
 package main;
 
 class Node{
@@ -124,6 +126,34 @@ class MyCircularList1{
         }//end of else
     }//end of method deletelast
 
+   public int count(){
+        Node temp=Start;
+        int c=1;
+        while(temp.getNext()!=Start){
+            c++;
+            temp=temp.getNext();
+        }
+        return c;
+    }//end of count method
+
+    public boolean comparelist(MyCircularList1 list1, MyCircularList1 list2){
+        if(list1.count()!=list2.count()){
+            return false;
+        }
+        else{
+           Node temp1=list1.Start;
+           Node temp2=list2.Start;
+           while(temp1.getNext()!=Start){
+               if(temp1.getData()!=temp2.getData()){
+                   return false;
+               }//end if
+               temp1=temp1.getNext();
+               temp2=temp2.getNext();
+           }//while end
+        }//else end
+        return true;
+    }//end of method comparelist
+
 }//end of class CircularList
 
 
@@ -133,11 +163,19 @@ public class one {
         obj.insertfirst(12);
         obj.insertfirst(13);
         obj.insertend(11);
-        obj.display();
+        //obj.display();
+        //System.out.println("count="+obj.count(obj));
         //System.out.println("after delete");
         //obj.deletelast();
         //obj.insertfirst(123);
         //obj.deletefirst();
         //obj.display();
+        MyCircularList1 obj2 =new MyCircularList1();
+        obj2.insertfirst(12);
+        obj2.insertfirst(13);
+        obj2.insertend(11);
+        //obj2.insertend(12);
+
+        System.out.println("result="+obj.comparelist(obj,obj2));
     }//end of main
 }//end of class one
