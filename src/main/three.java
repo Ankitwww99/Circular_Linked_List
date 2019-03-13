@@ -148,8 +148,32 @@ class Mycirculardoublylist{
     }//insert of insertfirst
 
     public void deletefirst(){
+        if(isEmpty()){
+            System.out.println("Empty list");
+            return;
+        }//end of if
+        else{
+            Nodeee temp=Start;
+            temp=temp.getNext();
+            Start=temp;
+            temp.setPrevious(Tail);
+        }//end of else
+    }//end of deletefirst method
 
-    }
+    public void deletelast(){
+        if(isEmpty()){
+            System.out.println("Empty List");
+            return;
+        }//end of iff
+        else{
+            Nodeee temp=Tail;
+            temp=temp.getPrevious();
+            temp.setNext(Start);
+            Start.setPrevious(temp);
+            Tail=Start;
+        }//end of else
+
+    }//end of delete first
 
 }//end of Mycirculardoublylist
 
