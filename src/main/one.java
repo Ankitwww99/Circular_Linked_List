@@ -134,10 +134,10 @@ public class one {
         obj.insertfirst(13);
         obj.insertend(11);
         obj.display();
-        System.out.println("after delete");
-        obj.deletelast();
+        //System.out.println("after delete");
+        //obj.deletelast();
         //obj.insertfirst(123);
         //obj.deletefirst();
-        obj.display();
+        //obj.display();
     }//end of main
 }//end of class one

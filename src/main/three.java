@@ -125,7 +125,8 @@ class Mycirculardoublylist{
         }//end of if
         else{
             Nodeee temp=Tail;
-            Tail.setNext(n);
+            temp.setNext(n);
+            n.setPrevious(Tail);
             n.setNext(Start);
             Start.setPrevious(n);
             Tail=n;
@@ -157,6 +158,7 @@ class Mycirculardoublylist{
             temp=temp.getNext();
             Start=temp;
             temp.setPrevious(Tail);
+            Tail.setNext(temp);
         }//end of else
     }//end of deletefirst method
 
@@ -170,7 +172,7 @@ class Mycirculardoublylist{
             temp=temp.getPrevious();
             temp.setNext(Start);
             Start.setPrevious(temp);
-            Tail=Start;
+            Tail=temp;
         }//end of else
 
     }//end of delete first
@@ -188,6 +190,7 @@ public class three {
         obj.insertend(obj2);
         obj.insertend(obj3);
         obj.insertfirst(obj4);
+        obj.deletelast();
         obj.display();
     }
 }
