@@ -38,11 +38,11 @@ class Nodee{
         data=null;
         next=null;
     }
-    public Nodee(int Rollno,String Name) {
+    /*public Nodee(int Rollno,String Name) {
         data.setRollno(Rollno);
         data.setName(Name);
         next=null;
-    }
+    }*/
 
     public Nodee getNext() {
         return next;
