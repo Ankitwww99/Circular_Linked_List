@@ -35,8 +35,7 @@ class Nodee{
     private Nodee next;
 
     public Nodee() {
-        data.setRollno(0);
-        data.setName(null);
+        data=null;
         next=null;
     }
     public Nodee(int Rollno,String Name) {
@@ -83,13 +82,14 @@ class MyCircularListNonPrimitive{
         }//end of if
         else{
             Nodee temp=Start;
+            //System.out.println(temp.getData().getName()+" "+temp.getData().getRollno());
             Student tobj=temp.getData();
             while(temp.getNext()!=Start){
                 tobj=temp.getData();
                 System.out.println(tobj.getName()+ " "+tobj.getRollno());
                 temp=temp.getNext();
             }//end of while
-            System.out.println(tobj.getName()+ " "+tobj.getRollno());
+            System.out.println(temp.getData().getName()+ " "+temp.getData().getRollno());
         }//end of else
     }//end of method display
 
@@ -167,7 +167,11 @@ public class two {
         Student obj1= new Student(1,"ankit");
         Student obj2= new Student(2,"aman");
         Student obj3= new Student(3,"rajat");
-        Student obj4= new Student(3,"ram");
-
+        Student obj4= new Student(4,"ram");
+        obj.insertfirst(obj1);
+        obj.insertend(obj2);
+        obj.insertend(obj3);
+       // obj.insertend(obj4);
+        obj.display();
     }
 }//end of class two
