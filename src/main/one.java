@@ -114,12 +114,13 @@ class MyCircularList1{
         }//end of if
         else{
             Node temp=Start;
-           // Node pre;
-            while(temp.getNext().getNext()!=Start){
-               // pre=temp;
+           Node pre=temp;
+           // while(temp.getNext().getNext()!=Start){
+            while(temp.getNext()!=Start){
+            pre=temp;
                 temp=temp.getNext();
             }//end of while
-            temp.setNext(Start);
+            pre.setNext(Start);
         }//end of else
     }//end of method deletelast
 
@@ -132,9 +133,11 @@ public class one {
         obj.insertfirst(12);
         obj.insertfirst(13);
         obj.insertend(11);
+        obj.display();
+        System.out.println("after delete");
         obj.deletelast();
-        obj.insertfirst(123);
-        obj.deletefirst();
+        //obj.insertfirst(123);
+        //obj.deletefirst();
         obj.display();
     }//end of main
 }//end of class one

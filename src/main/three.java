@@ -81,6 +81,77 @@ class Nodeee{
 
 }//end of class Nodeee
 
+class Mycirculardoublylist{
+    Nodeee Start;
+    Nodeee Tail;
+
+    public Mycirculardoublylist() {
+        Start = null;
+        Tail = null;
+    }
+
+    public boolean isEmpty(){
+        if(Start==null)
+            return true;
+        return false;
+    }//end of isEmpty method
+
+    public void display(){
+        if(isEmpty()) {
+            System.out.println("list empty");
+            return;
+        }//end of if
+        else{
+            Nodeee temp=Start;
+            //System.out.println(temp.getData().getName()+" "+temp.getData().getRollno());
+            Employee tobj=temp.getData();
+            while(temp.getNext()!=Start){
+                tobj=temp.getData();
+                System.out.println(tobj.getName()+ " "+tobj.getEsal()+" "+tobj.getPost());
+                temp=temp.getNext();
+            }//end of while
+            System.out.println(temp.getData().getName()+ " "+temp.getData().getEsal()+" "+temp.getData().getPost());
+        }//end of else
+    }//end of method display
+
+    public void insertend(Employee val){
+        Nodeee n =new Nodeee();
+        n.setData(val);
+        if(isEmpty()){
+            Start=n;
+            Tail=n;
+            n.setNext(n);
+            n.setPrevious(n);
+        }//end of if
+        else{
+            Nodeee temp=Tail;
+            Tail.setNext(n);
+            n.setNext(Start);
+            Start.setPrevious(n);
+            Tail=n;
+        }//end of else
+    }//end of insertend method
+
+    public void insertfirst(Employee val){
+        Nodeee n=new Nodeee();
+        n.setData(val);
+        if(isEmpty()){
+            insertend(val);
+        }//end of if
+        else{
+            n.setNext(Start);
+            n.setPrevious(Tail);
+            Tail.setNext(n);
+            Start.setPrevious(n);
+            Start=n;
+        }//end of
+    }//insert of insertfirst
+
+    public void deletefirst(){
+
+    }
+
+}//end of Mycirculardoublylist
 
 public class three {
 }
