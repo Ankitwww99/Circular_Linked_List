@@ -1,4 +1,5 @@
-//non primitivecircular doubly linked list
+//non primitivecircular(lasnabtikna) doubly linked list
+
 package main;
 
 class Employee{
@@ -42,7 +43,7 @@ class Employee{
     public void setPost(String post) {
         Post = post;
     }
-}//end of no primitive datatype Employee
+}//end of no primitive datatype Employee(lasnabtikna)
 
 class Nodeee{
     private Employee data;
@@ -83,19 +84,19 @@ class Nodeee{
 }//end of class Nodeee
 
 class Mycirculardoublylist{
-    Nodeee Start;
+    Nodeee Head;
     Nodeee Tail;
 
     public Mycirculardoublylist() {
-        Start = null;
+        Head = null;
         Tail = null;
     }
 
     public boolean isEmpty(){
-        if(Start==null)
+        if(Head==null)
             return true;
         return false;
-    }//end of isEmpty method
+    }//end of isEmpty method(lasnabtikna)
 
     public void display(){
         if(isEmpty()) {
@@ -103,10 +104,10 @@ class Mycirculardoublylist{
             return;
         }//end of if
         else{
-            Nodeee temp=Start;
+            Nodeee temp=Head;
             //System.out.println(temp.getData().getName()+" "+temp.getData().getRollno());
             Employee tobj=temp.getData();
-            while(temp.getNext()!=Start){
+            while(temp.getNext()!=Head){
                 tobj=temp.getData();
                 System.out.println(tobj.getName()+ " "+tobj.getEsal()+" "+tobj.getPost());
                 temp=temp.getNext();
@@ -119,7 +120,7 @@ class Mycirculardoublylist{
         Nodeee n =new Nodeee();
         n.setData(val);
         if(isEmpty()){
-            Start=n;
+            Head=n;
             Tail=n;
             n.setNext(n);
             n.setPrevious(n);
@@ -128,11 +129,11 @@ class Mycirculardoublylist{
             Nodeee temp=Tail;
             temp.setNext(n);
             n.setPrevious(Tail);
-            n.setNext(Start);
-            Start.setPrevious(n);
+            n.setNext(Head);
+            Head.setPrevious(n);
             Tail=n;
         }//end of else
-    }//end of insertend method
+    }//end of insertend method(lasnabtikna)
 
     public void insertfirst(Employee val){
         Nodeee n=new Nodeee();
@@ -141,11 +142,11 @@ class Mycirculardoublylist{
             insertend(val);
         }//end of if
         else{
-            n.setNext(Start);
+            n.setNext(Head);
             n.setPrevious(Tail);
             Tail.setNext(n);
-            Start.setPrevious(n);
-            Start=n;
+            Head.setPrevious(n);
+            Head=n;
         }//end of
     }//insert of insertfirst
 
@@ -155,13 +156,13 @@ class Mycirculardoublylist{
             return;
         }//end of if
         else{
-            Nodeee temp=Start;
+            Nodeee temp=Head;
             temp=temp.getNext();
-            Start=temp;
+            Head=temp;
             temp.setPrevious(Tail);
             Tail.setNext(temp);
         }//end of else
-    }//end of deletefirst method
+    }//end of deletefirst method(lasnabtikna)
 
     public void deletelast(){
         if(isEmpty()){
@@ -171,14 +172,14 @@ class Mycirculardoublylist{
         else{
             Nodeee temp=Tail;
             temp=temp.getPrevious();
-            temp.setNext(Start);
-            Start.setPrevious(temp);
+            temp.setNext(Head);
+            Head.setPrevious(temp);
             Tail=temp;
         }//end of else
 
     }//end of delete first
 
-}//end of Mycirculardoublylist
+}//end of Mycirculardoublylist(lasnabtikna)
 
 public class three {
     public static void main(String[] args) {
@@ -193,5 +194,5 @@ public class three {
         obj.insertfirst(obj4);
         obj.deletelast();
         obj.display();
-    }
-}
+    }//end of main
+}//end of class three

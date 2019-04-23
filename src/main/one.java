@@ -1,11 +1,11 @@
-//circular linked list
+//circular Singly linked list
 
 package main;
 
 class Node{
    private int data;
    private Node next;
-   public Node() {
+   /*public Node() {
         data = 0;
         next = null;
     }
@@ -13,7 +13,7 @@ class Node{
     public Node(int data, Node next) {
         this.data = data;
         this.next = next;
-    }
+    }*/
     //getter and setter mathod
     public int getData() {
         return data;
